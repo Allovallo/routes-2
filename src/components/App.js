@@ -5,17 +5,21 @@ import { About } from '../pages/About';
 import { Mission } from './Mission';
 import { Team } from './Team';
 import { Reviews } from './Reviews';
+import { Products } from '../pages/Products';
+import { ProductDetails } from '../pages/ProductDetails';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />}></Route>
-        <Route path="/about" element={<About />}>
+        <Route path="about" element={<About />}>
           <Route path="mission" element={<Mission />}></Route>
           <Route path="team" element={<Team />}></Route>
           <Route path="reviews" element={<Reviews />}></Route>
         </Route>
+        <Route path="products" element={<Products />}></Route>
+        <Route path="products/:id" element={<ProductDetails />}></Route>
       </Route>
     </Routes>
   );
